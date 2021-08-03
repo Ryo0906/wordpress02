@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Go! CAMP - お問い合わせ</title>
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="img/logo.svg" alt="Go! CAMP" width="240">
+      </a>
+    </div>
+    <button id="hamburger" class="header-button">
+      <span class="icon"></span>
+    </button>
+    <nav class="header-gnav">
+      <ul>
+        <li>
+          <a href="index.html">トップページ</a>
+        </li>
+        <li>
+          <a href="list.html">NEWS</a>
+        </li>
+        <li>
+          <a href="faq.html">よくある質問</a>
+        </li>
+        <li>
+          <a href="contact.html">お問い合わせ</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <nav class="breadcrumb">
+    <ol>
+      <li>
+        <a href="index.html">ホーム</a>
+      </li>
+      <li>
+        お問い合わせ
+      </li>
+    </ol>
+  </nav>
+  <main>
+    <h1 class="heading-title">お問い合わせ</h1>
+    <section class="contact">
+      <p class="contact-description">
+        お問い合わせありがとうございます。<br class="sp-hide">下記項目を入力し、お間違えなければ<br class="pc-hide">「個人情報の取扱について」に同意の上、「同意して送信する」を押してください。
+      </p>
+      <form method="POST" action="#">
+        <table class="contact-form">
+          <tr>
+            <th>
+              <label for="name">氏名</label>
+            </th>
+            <td>
+              <input id="name" type="text" name="your-name" placeholder="例）山田太郎" required>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="tel">電話番号</label>
+            </th>
+            <td>
+              <input id="tel" type="tel" name="your-tel" placeholder="例）00000000000（ハイフンなし）">
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="email">メールアドレス</label>
+            </th>
+            <td>
+              <input id="email" type="email" name="your-email" placeholder="例）info@example.com" required>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="message">お問い合わせ内容</label>
+            </th>
+            <td>
+              <textarea id="message" name="message" required></textarea>
+            </td>
+          </tr>
+        </table>
+        <div class="contact-submit">
+          <input type="submit" value="同意して送信する">
+        </div>
+      </form>
+      <div class="contact-policy">
+        <h4>個人情報の取扱について</h4>
+        <p>
+          この「お問い合せ・資料請求」でご提供いただく個人情報は、資料送付等の目的で利用します。<br>
+          本人の意思によりご提供いただけない部分がある場合、手続き・サービス等に支障が生じることがあります。<br>
+          本人の同意がある場合または法令に基づく場合を除き、取得した個人情報を第三者に提供することはありません。<br>
+          本人からの求めにより、当社が本件により取得した開示対象個人情報の利用目的の通知・開示・内容の訂正・追加または削除・利用の停止・消去および第三者への提供の停止に応じます。<br>
+          保有する個人情報を当社の厳正な管理の下で保管し、目的達成後の適切な時期に安全に廃棄いたします。<br>
+          個人情報に関するお問い合わせは、個人情報お問い合わせ窓口（0000-00-0000、日祝日・年末年始を除く、10時～17時）にて承ります。<br>
+          個人情報保護管理責任者
+        </p>
+      </div>
+    </section>
+  </main>
+  <div id="pagetop" class="pagetop"></div>
+  <footer>
+    <small>&copy; MdN Corporation.</small>
+  </footer>
+</body>
+</html>
