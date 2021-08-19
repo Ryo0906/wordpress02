@@ -13,7 +13,7 @@
 		<a href="#">続きを読む</a>
 	</div>
 	<div class="top-feature-img">
-		<img src="img/photo-img01.jpg" width="530" alt="">
+		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/photo-img01.jpg" width="530" alt="">
 	</div>
 </div>
 <div class="top-feature">
@@ -23,7 +23,7 @@
 		<a href="#">続きを読む</a>
 	</div>
 	<div class="top-feature-img">
-		<img src="img/photo-img02.jpg" width="530" alt="">
+		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/photo-img02.jpg" width="530" alt="">
 	</div>
 </div>
 <section>
