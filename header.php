@@ -8,16 +8,19 @@
 <body <?php body_class( 'top' ); ?>>
 <header>
 	<div class="header-logo">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<img src="img/logo.svg" alt="Go! CAMP" width="240">
-      <?php
-      if ( has_custom_logo() ) {
-        $custom_logo_id = get_theme_mod( 'custom_logo' );
-        $image = wp_get_attachment_image_src( $custom_logo_id, 'full' );
-        var_dump( $image );
-      }
-      ?>
-		</a>
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<?php
+			if ( has_custom_logo() ) {
+				$custom_logo_id = get_theme_mod( 'custom_logo' );
+				$image = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+				$html = '<img src="' . $image[0] . '"';
+				$html .= ' width="' . $image[1] . '';
+				$html .= ' height="' . $image[2] . '"';
+				$html .= ' alt="' . esc_attr( get_bloginfo( 'name' ) ) . '">';
+				echo $html;
+			}
+			?>
+    </a>
 	</div>
 	<button id="hamburger" class="header-button">
 		<span class="icon"></span>
