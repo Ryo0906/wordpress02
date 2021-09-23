@@ -13,9 +13,9 @@ get_header();
 				<ol>
 					<?php while( have_posts() ) : the_post(); ?>
 						<li>
-							<a href="news.html">
+							<a href="<?php the_permalink(); ?>">
 								<div class="news-list-img">
-									<img src="img/photo-thumb01.jpg" width="120" alt="クリスマスイベントを開催しました">
+									<?php the_post_thumbnail(); ?>
 								</div>
 								<div class="news-list-info">
 									<time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>

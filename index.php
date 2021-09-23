@@ -28,51 +28,30 @@
 </div>
 <section>
 	<h2 class="heading-title">NEWS</h2>
+  <?php
+  $args = array(
+    'post_type' => 'post',
+    'category_name' => 'news',
+    'posts_per_page' => 4
+  );
+  $posts = get_posts( $args );
+  ?>
+  <?php if ( have_posts() ) : ?>
 	<ul class="top-list">
+    <?php while ( have_posts() ) : the_post(); ?>
 		<li>
-			<a href="news.html">
+			<a href="<?php the_permalink(); ?>">
 				<div class="top-list_img">
-					<img src="img/photo-thumb01.jpg" width="120" alt="">
+					<?php the_post_thumbnail(); ?>
 				</div>
 				<div class="top-list_info">
-					<time>2019年12月26日</time>
-					<p class="top-list_title">クリスマスイベントを開催しました</p>
+					<time datetime="<?php echo esc_attr( get_the_time( 'Y-m-d' ) ); ?>"><?php echo esc_attr( get_the_time( get_option( 'date_format' ) ) ); ?></time>
+					<p class="top-list_title"><?php the_title(); ?></p>
 				</div>
 			</a>
+      <?php endwhile; ?>
 		</li>
-		<li>
-			<a href="news.html">
-				<div class="top-list_img">
-					<img src="img/photo-thumb02.jpg" width="120" alt="">
-				</div>
-				<div class="top-list_info">
-					<time>2019年12月11日</time>
-					<p class="top-list_title">お正月イベントのお知らせ</p>
-				</div>
-			</a>
-		</li>
-		<li>
-			<a href="news.html">
-				<div class="top-list_img">
-					<img src="img/photo-thumb03.jpg" width="120" alt="">
-				</div>
-				<div class="top-list_info">
-					<time>2019年12月1日</time>
-					<p class="top-list_title">クリスマスプレゼント抽選会のお知らせ</p>
-				</div>
-			</a>
-		</li>
-		<li>
-			<a href="news.html">
-				<div class="top-list_img">
-					<img src="img/photo-thumb04.jpg" width="120" alt="">
-				</div>
-				<div class="top-list_info">
-					<time>2019年11月10日</time>
-					<p class="top-list_title">年末年始営業時間および休業のお知らせ</p>
-				</div>
-			</a>
-		</li>
+    <?php endif; ?>
 	</ul>
 </section>
 <?php get_footer();
